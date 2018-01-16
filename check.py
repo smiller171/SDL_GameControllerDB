@@ -192,11 +192,10 @@ class Mapping:
 
 
     def serialize(self):
-        ret = "%s,%s," % (self.guid, self.name)
+        ret = "%s,%s,platform:%s," % (self.guid, self.name, self.platform)
         sorted_keys = sorted(self.__keys.items())
         for key,val in sorted_keys:
             ret += "%s:%s," % (key, val)
-        ret += "platform:%s," % (self.platform)
         return ret
 
 
